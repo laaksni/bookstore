@@ -9,10 +9,6 @@ import hh.s24.bookstore.domain.Book;
 import hh.s24.bookstore.domain.BookRepository;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
-
-
-
 @Controller
 public class BookController {
     @Autowired
@@ -42,6 +38,4 @@ public class BookController {
         return "redirect:/booklist";
     }
     
-    
-
 }
