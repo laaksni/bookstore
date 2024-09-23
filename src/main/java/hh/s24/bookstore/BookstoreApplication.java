@@ -42,9 +42,9 @@ public class BookstoreApplication {
                 log.info("Category [id={}, name={}]", category.getCategoryId(), category.getName());
 			}
 
-			Book b1 = new Book("Modern Time", "John Wayne", 1999, "22398-12");
-			Book b2 = new Book("Why me?", "Kylia Bush", 2011, "3829-34");
-			Book b3 = new Book("Not today", "Jakob Peralta", 2020, "69699-76");
+			Book b1 = new Book("Modern Time", "John Wayne", 1999, "22398-12", c3);
+			Book b2 = new Book("Why me?", "Kylia Bush", 2011, "3829-34", c2);
+			Book b3 = new Book("Not today", "Jakob Peralta", 2020, "69699-76", c1);
 
 			repository.save(b1);
 			repository.save(b2);
