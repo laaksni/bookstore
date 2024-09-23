@@ -5,14 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import hh.s24.bookstore.domain.Book;
 import hh.s24.bookstore.domain.BookRepository;
-import org.springframework.web.bind.annotation.RequestMethod;
+import hh.s24.bookstore.domain.CategoryRepository;
+
 
 @Controller
 public class BookController {
     @Autowired
     private BookRepository repository;
+
+    @Autowired
+    private CategoryRepository cRepository;
 
     @RequestMapping("/booklist")
     public String bookList(Model model) {
@@ -20,9 +25,10 @@ public class BookController {
         return "booklist";
     }
 
-    @RequestMapping(value = "/add")
+    @RequestMapping(value = "/add", method=RequestMethod.GET)
     public String addBook(Model model) {
         model.addAttribute("book", new Book());
+        model.addAttribute("categories", cRepository.findAll());
         return "addbook";
     }
     

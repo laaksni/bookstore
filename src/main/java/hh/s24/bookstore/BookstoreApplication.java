@@ -30,10 +30,12 @@ public class BookstoreApplication {
 			Category c1 = new Category("Sci-fi");
             Category c2 = new Category("Comic");
             Category c3 = new Category("Fantasy");
+			Category c4 = new Category("Humppaa");
 
 			cRepository.save(c1);
             cRepository.save(c2);
             cRepository.save(c3);
+			cRepository.save(c4);
 
 			log.info("Categories saved");
 
